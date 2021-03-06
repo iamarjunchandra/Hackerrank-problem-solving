@@ -1,0 +1,10 @@
+#Recursive function for finding combinations nCr
+
+
+def ncr(n,k,min_n=0,accumulator=None):
+    if accumulator==None:
+        accumulator=[]
+    if k==0:
+        return [accumulator]
+    else:
+        return [l for x in range(min_n,n) for l in ncr(n,k-1,x+1,accumulator+[x+1])]
